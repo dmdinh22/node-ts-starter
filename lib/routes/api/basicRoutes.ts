@@ -14,24 +14,14 @@ export class Routes {
         // contact
         app.route('/contact')
             // GET endpoint
-            .get((req: Request, res: Response) => {
-                // Get all contacts
-                res.status(200).send({
-                    message: 'GET request successful.'
-                });
-            })
+            .get(this.contactController.getContacts)
             // POST
             .post(this.contactController.addNewContact);
 
         // Contact detail
         app.route('/contact/:contactId')
             // get specific contact
-            .get((req: Request, res: Response) => {
-                // Get a single contact detail
-                res.status(200).send({
-                    message: 'GET request successful.'
-                });
-            })
+            .get(this.contactController.getContactWithID)
             .put((req: Request, res: Response) => {
                 // Update a contact
                 res.status(200).send({

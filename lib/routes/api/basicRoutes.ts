@@ -23,11 +23,6 @@ export class Routes {
             // get specific contact
             .get(this.contactController.getContactWithID)
             .put(this.contactController.updateContact)
-            .delete((req: Request, res: Response) => {
-                // Delete a contact
-                res.status(200).send({
-                    message: 'DELETE request successful.'
-                });
-            });
+            .delete(this.contactController.deleteContact);
     }
 }

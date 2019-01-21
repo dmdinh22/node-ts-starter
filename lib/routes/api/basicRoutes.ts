@@ -22,12 +22,7 @@ export class Routes {
         app.route('/contact/:contactId')
             // get specific contact
             .get(this.contactController.getContactWithID)
-            .put((req: Request, res: Response) => {
-                // Update a contact
-                res.status(200).send({
-                    message: 'PUT request successful.'
-                });
-            })
+            .put(this.contactController.updateContact)
             .delete((req: Request, res: Response) => {
                 // Delete a contact
                 res.status(200).send({

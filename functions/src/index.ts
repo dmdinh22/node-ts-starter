@@ -1,6 +1,6 @@
 import * as functions from 'firebase-functions';
 import * as admin from 'firebase-admin';
-import * as firebaseHelper from 'firebase-functions-helper';
+const firebaseHelper = require('firebase-functions-helper');
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
 admin.initializeApp(functions.config().firebase);
